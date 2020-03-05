@@ -5,7 +5,16 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	window = hwnd;
 	input = in;
 
-	// initialise game objects
+	//Initialise game objects
+	artOfBall.loadFromFile("gfx/Beach_Ball.png");
+
+	Bawl.setTexture(&artOfBall);
+	Bawl.setSize(sf::Vector2f(93, 93));
+	Bawl.setOrigin(46.5, 46.5);
+	Bawl.setPosition(600, 10);
+	Bawl.setInput(input);
+	Bawl.receiveWin(window);
+
 
 }
 
@@ -17,19 +26,20 @@ Level::~Level()
 // handle user input
 void Level::handleInput(float dt)
 {
-
+	Bawl.handleInput(dt);
 }
 
 // Update game objects
 void Level::update(float dt)
 {
-
+	Bawl.update(dt);
 }
 
 // Render level
 void Level::render()
 {
 	beginDraw();
+	window->draw(Bawl);
 
 	endDraw();
 }

@@ -2,8 +2,11 @@
 
 #include <SFML/Graphics.hpp>
 #include "Framework/Input.h"
+#include "Framework/GameObject.h"
+
 #include <string.h>
 #include <iostream>
+#include "Ball.h"
 
 
 class Level{
@@ -25,4 +28,6 @@ private:
 	Input* input;
 
 	// More level variables
+	Ball Bawl;
+	sf::Texture artOfBall;
 };
