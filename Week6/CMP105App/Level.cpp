@@ -15,7 +15,12 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	Bawl.setInput(input);
 	Bawl.receiveWin(window);
 
-
+	Boll.setTexture(&artOfBall);
+	Boll.setSize(sf::Vector2f(93, 93));
+	Boll.setOrigin(46.5, 46.5);
+	Boll.setPosition(100, 300);
+	Boll.setInput(input);
+	//Boll.receiveWin(window);
 }
 
 Level::~Level()
@@ -33,13 +38,15 @@ void Level::handleInput(float dt)
 void Level::update(float dt)
 {
 	Bawl.update(dt);
+	Boll.update(dt);
 }
 
 // Render level
 void Level::render()
 {
 	beginDraw();
-	window->draw(Bawl);
+	//window->draw(Bawl);
+	window->draw(Boll);
 
 	endDraw();
 }

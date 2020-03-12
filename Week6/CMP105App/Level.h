@@ -7,6 +7,7 @@
 #include <string.h>
 #include <iostream>
 #include "Ball.h"
+#include "BallDos.h"
 
 
 class Level{
@@ -30,4 +31,6 @@ private:
 	// More level variables
 	Ball Bawl;
 	sf::Texture artOfBall;
+
+	BallDos Boll;
 };
